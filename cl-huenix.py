@@ -130,7 +130,10 @@ def print_status(url_base):
 		else:
 			state = 'off'
 
-		brightness = group['state']['bri']
+		try:
+			brightness = group['state']['bri']
+		except KeyError:
+			brightness = 'N/A'
 
 		try:
 			saturation = group['state']['sat']
